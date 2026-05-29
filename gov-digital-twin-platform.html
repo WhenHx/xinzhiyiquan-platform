@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>苏州市新业态权益治理数字孪生平台</title>
+    <link rel="stylesheet" href="./gov-dashboard.css" />
+  </head>
+  <body>
+    <div class="twin-platform">
+      <header class="cockpit-header">
+        <div class="header-frame" aria-hidden="true"></div>
+        <div class="header-copy">
+          <h1>苏州市新业态权益治理数字孪生平台</h1>
+          <p>AI法援 · 风险预警 · 重大案件联动处置</p>
+        </div>
+        <time id="currentTime">2026年05月28日 16:30:00</time>
+      </header>
+
+      <main class="screen-grid">
+        <aside class="left-rail">
+          <section class="tech-card smart-card">
+            <div class="card-title">
+              <span>智能治理</span>
+              <b>AI</b>
+            </div>
+            <div class="smart-layout">
+              <div>
+                <small>线索总量</small>
+                <strong>400P</strong>
+              </div>
+              <div class="ring-meter" style="--value: 82">
+                <span>82%</span>
+                <em>研判率</em>
+              </div>
+              <div>
+                <small>日均呼叫</small>
+                <strong class="cyan">8,420</strong>
+              </div>
+            </div>
+            <p class="online-state"><i></i>AI研判引擎在线</p>
+          </section>
+
+          <section class="tech-card wave-card">
+            <div class="card-title"><span>风险波峰</span></div>
+            <p>投诉/咨询/舆情同比综合热度</p>
+            <svg viewBox="0 0 320 110" class="wave-chart" aria-hidden="true">
+              <path class="area" d="M0,76 L34,52 L72,30 L112,46 L150,54 L190,78 L228,68 L258,52 L286,42 L320,22 L320,110 L0,110 Z" />
+              <path class="line" d="M0,76 L34,52 L72,30 L112,46 L150,54 L190,78 L228,68 L258,52 L286,42 L320,22" />
+            </svg>
+            <div class="axis-labels">
+              <span>12时</span><span>15时</span><span>18时</span><span>21时</span><span>0时</span><span>3时</span>
+            </div>
+          </section>
+
+          <section class="tech-card cause-card">
+            <div class="card-title"><span>案由结构</span></div>
+            <div class="cause-layout">
+              <div class="donut">
+                <span>38%</span>
+                <em>劳动关系</em>
+              </div>
+              <div class="cause-bars">
+                <div class="cause-item" style="--w: 38%; --c: var(--red)"><span>劳动关系认定</span><i></i><b>38%</b></div>
+                <div class="cause-item" style="--w: 27%; --c: var(--amber)"><span>工伤认定</span><i></i><b>27%</b></div>
+                <div class="cause-item" style="--w: 21%; --c: var(--blue)"><span>社保缴纳</span><i></i><b>21%</b></div>
+                <div class="cause-item" style="--w: 14%; --c: var(--violet)"><span>薪资矛盾</span><i></i><b>14%</b></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tech-card ecology-card">
+            <div class="card-title"><span>生态协同</span></div>
+            <div class="agency-grid">
+              <div><i class="people"></i><strong>工会</strong><span>43件</span></div>
+              <div><i class="people green"></i><strong>人社</strong><span>31件</span></div>
+              <div><i class="book"></i><strong>仲裁</strong><span>23件</span></div>
+              <div><i class="law"></i><strong>法援</strong><span>18件</span></div>
+            </div>
+            <p>证据链、咨询、调解、仲裁材料目录统一同步。</p>
+          </section>
+        </aside>
+
+        <section class="center-stage">
+          <div class="kpi-strip">
+            <article>
+              <span>本周纠纷</span>
+              <strong>1,236</strong>
+              <em>同比 +18%</em>
+            </article>
+            <article class="danger">
+              <span>高风险预警</span>
+              <strong>73</strong>
+              <em>需督办</em>
+            </article>
+            <article class="amber">
+              <span>协同平台</span>
+              <strong>12</strong>
+              <em>待处理</em>
+            </article>
+          </div>
+
+          <div class="map-shell reference-map-mode" aria-label="苏州新业态权益治理数字孪生地图">
+            <div class="map-glow" aria-hidden="true"></div>
+            <img class="twin-map-core" src="./reference-map-core.png" alt="深色数字孪生苏州地图" />
+
+            <div class="risk-pin red" style="left: 70%; top: 43%"></div>
+            <div class="risk-label red" style="left: 72.5%; top: 45%">
+              <strong>工业园区星湖站</strong>
+              <span>平台A · 312件</span>
+              <em>需督办</em>
+            </div>
+
+            <div class="risk-pin amber" style="left: 51%; top: 36%"></div>
+            <div class="risk-label amber" style="left: 54%; top: 37%">
+              <strong>高新区科技城</strong>
+              <span>举报8 · 205件</span>
+              <em>社保缺口</em>
+            </div>
+
+            <div class="risk-pin amber small" style="left: 57%; top: 52%"></div>
+            <div class="risk-label amber small-label" style="left: 60%; top: 52%">
+              <strong>吴中木渎站</strong>
+              <span>平台C · 187件</span>
+              <em>处理中</em>
+            </div>
+
+            <div class="risk-pin green small" style="left: 71%; top: 66%"></div>
+            <div class="map-callout">
+              <h2>红色督办中心</h2>
+              <p>平台A星湖站：7日内5起配送事故报备。AI关联免责条款、夜间高峰派单与事故报备缺失，建议工会/人社/仲裁联动核查。</p>
+            </div>
+            <p class="map-attribution">真实地图底座 · 数字孪生风险图层</p>
+          </div>
+
+          <div class="live-ticker">
+            <span>实时处置流：</span>
+            <b>15:42</b> 工会已介入工业园区星湖站
+            <i></i>
+            <b>15:48</b> 仲裁材料补正完成
+            <i></i>
+            <b>15:56</b> 平台B提交社保窗口清单
+          </div>
+        </section>
+
+        <aside class="right-rail">
+          <section class="tech-card alert-card">
+            <div class="card-title"><span>重大案件预警</span></div>
+            <button class="case-alert red active" type="button" data-case="red">
+              <b>P1</b>
+              <span><strong>红色督办 · 工业园区星湖站</strong><em>配送事故多发，争议聚集需核查</em></span>
+            </button>
+            <button class="case-alert amber" type="button" data-case="amber">
+              <b>P2</b>
+              <span><strong>橙色预警 · 高新区科技城</strong><em>社保缺口波动环比 +42%</em></span>
+            </button>
+            <button class="case-alert cyan" type="button" data-case="cyan">
+              <b>P3</b>
+              <span><strong>专项核查 · 吴中木渎站</strong><em>扣款/封号争议处理中</em></span>
+            </button>
+          </section>
+
+          <section class="tech-card cluster-card">
+            <div class="card-title"><span>地区 / 平台 / 案由聚集</span></div>
+            <div class="cluster-row" style="--w: 92%; --c: var(--red)">
+              <span>工业园区 · 平台A · 工伤/欠薪</span><b>92</b>
+            </div>
+            <div class="cluster-row" style="--w: 74%; --c: var(--amber)">
+              <span>高新区 · 平台B · 社保缴纳</span><b>74</b>
+            </div>
+            <div class="cluster-row" style="--w: 63%; --c: var(--cyan)">
+              <span>吴中区 · 平台C · 薪资矛盾</span><b>63</b>
+            </div>
+            <div class="cluster-row" style="--w: 56%; --c: var(--green)">
+              <span>相城区 · 平台D · 劳动关系认定</span><b>56</b>
+            </div>
+          </section>
+
+          <section class="tech-card resource-card">
+            <div class="card-title"><span>协同治理资源</span></div>
+            <div class="resource-grid">
+              <div class="hex cyan"><span>工会</span><b>12家</b></div>
+              <div class="hex green"><span>人社</span><b>8家</b></div>
+              <div class="hex amber"><span>仲裁</span><b>6家</b></div>
+              <div class="hex blue"><span>法援</span><b>7家</b></div>
+            </div>
+          </section>
+
+          <section class="tech-card clue-card">
+            <div class="card-title"><span>治理线索池</span></div>
+            <ul>
+              <li><i class="cyan-dot"></i>风险识别线索推单已生成</li>
+              <li><i class="red-dot"></i>暂无风险线索推送 5 个</li>
+              <li><i class="amber-dot"></i>政策建议：新业态社保补贴试点</li>
+              <li><i class="green-dot"></i>仲裁可受理线索：23条</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./gov-dashboard.js"></script>
+  </body>
+</html>

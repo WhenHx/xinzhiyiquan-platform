@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新职权益 · AI法援与风险预警平台</title>
+    <link rel="stylesheet" href="./usable-platform.css" />
+  </head>
+  <body>
+    <div class="platform-shell">
+      <aside class="platform-sidebar">
+        <div class="brand-block">
+          <div class="brand-icon">新</div>
+          <div>
+            <span>AI法援与风险预警平台</span>
+            <strong>新职权益</strong>
+          </div>
+        </div>
+        <nav class="side-nav" aria-label="主导航">
+          <button class="active" type="button" data-page="worker">劳动者端</button>
+          <button type="button" data-page="chat">AI语音法援</button>
+          <button type="button" data-page="contract">合同风险审查</button>
+          <button type="button" data-page="evidence">证据包生成</button>
+          <button type="button" data-page="govern">政府治理大屏</button>
+          <button type="button" data-page="policy">治理建议</button>
+        </nav>
+        <div class="case-mini">
+          <span class="status-dot"></span>
+          <div>
+            <small>当前案例</small>
+            <b id="miniCaseName">配送途中受伤 / 工伤认定</b>
+          </div>
+        </div>
+      </aside>
+
+      <main class="platform-main">
+        <header class="platform-topbar">
+          <div>
+            <p>苏州试点 · 决赛演示原型</p>
+            <h1>新就业形态劳动者权益保障工作台</h1>
+          </div>
+          <div class="topbar-actions">
+            <span id="saveState">未保存</span>
+            <button class="secondary" id="resetDemo" type="button">重置案例</button>
+            <button class="primary" id="quickRun" type="button">一键生成材料</button>
+          </div>
+        </header>
+
+        <section class="page active" id="page-worker">
+          <div class="hero-row">
+            <div>
+              <span class="page-kicker">劳动者端小程序</span>
+              <h2>一键建档与 AI 语音法援</h2>
+              <p>面向骑手、网约车司机、快递员，完成事实描述、材料上传、AI追问和法援材料生成。</p>
+            </div>
+            <div class="workflow-strip">
+              <b>1</b><span>输入事实</span><b>2</b><span>AI追问</span><b>3</b><span>上传证据</span><b>4</b><span>生成材料</span>
+            </div>
+          </div>
+
+          <div class="worker-grid">
+            <section class="phone-panel">
+              <div class="phone-frame">
+                <div class="phone-status"><span>9:41</span><span>5G</span></div>
+                <h3>我要维权</h3>
+                <div class="field-card">
+                  <small>案件类型</small>
+                  <select id="caseType">
+                    <option>配送途中受伤 / 工伤认定</option>
+                    <option>平台扣款 / 薪资争议</option>
+                    <option>社保缺失 / 参保咨询</option>
+                    <option>劳动关系认定</option>
+                  </select>
+                  <em>高优先级</em>
+                </div>
+                <label class="field-card">
+                  <small>平台/站点</small>
+                  <input id="platformName" value="某外卖平台A · 苏州工业园区星湖站" />
+                </label>
+                <label class="field-card">
+                  <small>发生时间</small>
+                  <input id="incidentTime" value="2026-05-12 11:36" />
+                </label>
+                <label class="field-card">
+                  <small>一句话描述</small>
+                  <textarea id="caseDesc">配送第18单途中摔伤，平台称我是合作关系，不能认定工伤。</textarea>
+                </label>
+                <div class="upload-grid">
+                  <button type="button" data-evidence="订单截图">订单截图</button>
+                  <button type="button" data-evidence="GPS轨迹">GPS轨迹</button>
+                  <button type="button" data-evidence="聊天记录">聊天记录</button>
+                  <button type="button" data-evidence="病历票据">病历票据</button>
+                </div>
+                <button class="wide-action" id="startCase" type="button">开始AI审查并生成补证清单</button>
+              </div>
+            </section>
+
+            <section class="worker-output">
+              <div class="output-card hot">
+                <span>风险等级</span>
+                <strong id="workerRisk">高风险 86</strong>
+                <p id="workerRiskText">平台否认劳动关系，但存在派单、考核、扣款和站点管理线索。</p>
+              </div>
+              <div class="output-card">
+                <span>补证清单</span>
+                <ul id="supplementList">
+                  <li>站长排班截图与事故报备原图</li>
+                  <li>事故当天订单轨迹与超时记录</li>
+                  <li>医院诊断证明、发票、复诊建议</li>
+                  <li>收入流水与平台扣款明细</li>
+                </ul>
+              </div>
+              <div class="output-card">
+                <span>材料状态</span>
+                <div class="material-progress"><i style="--w: 86%"></i></div>
+                <p><b id="materialCount">4</b> 类材料已建档，证据完整度 <b id="evidenceScore">86%</b></p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-chat">
+          <div class="page-head"><span class="page-kicker">AI Legal Assistant</span><h2>AI 语音法援顾问</h2></div>
+          <div class="chat-grid">
+            <section class="voice-card">
+              <h3>正在语音问诊</h3>
+              <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <button class="primary" id="continueVoice" type="button">继续语音</button>
+              <button class="secondary" id="generateLegal" type="button">生成材料</button>
+            </section>
+            <section class="chat-card">
+              <div class="message user">平台说我是合作关系，不能认定工伤，我该怎么办？</div>
+              <div class="message ai">先固定三类证据：平台管理控制、事故发生于配送任务中、收入结算与考核扣款。</div>
+              <div class="message ai">我已生成：补证清单、仲裁申请摘要、律师复核提示。</div>
+              <div class="message system" id="chatDynamic">下一步：补充站长排班截图与事故报备原图。</div>
+            </section>
+            <section class="legal-output-card">
+              <h3>本案法援输出</h3>
+              <article><b>争议焦点</b><span>平台是否对骑手形成实际管理控制</span></article>
+              <article><b>主张路径</b><span>确认劳动关系；或主张职业伤害保障责任</span></article>
+              <article><b>时限提醒</b><span>事故材料建议在48小时内完成固化</span></article>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-contract">
+          <div class="page-head"><span class="page-kicker">合同审查 Agent</span><h2>NLP 条款解析与替代建议</h2></div>
+          <div class="contract-grid">
+            <section class="contract-editor">
+              <textarea id="contractText">第2.1条 双方为合作承揽关系，不构成劳动关系。
+第4.3条 乙方应接受平台派单、站点排班和配送时效考核。
+第6.4条 配送途中发生事故由乙方自行承担，平台不承担任何责任。
+第8.2条 平台可根据运营规则单方调整结算标准并扣除服务费用。</textarea>
+              <button class="primary" id="reviewContract" type="button">开始审查</button>
+            </section>
+            <section class="contract-result">
+              <div class="risk-summary"><b id="contractScore">高风险 92</b><span>识别到 4 项关键风险条款</span></div>
+              <div id="clauseList" class="clause-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-evidence">
+          <div class="page-head"><span class="page-kicker">证据链 Agent</span><h2>多源材料固化与哈希存证</h2></div>
+          <div class="evidence-grid">
+            <section class="evidence-source">
+              <button type="button" data-evidence="接单记录">接单记录</button>
+              <button type="button" data-evidence="聊天记录">聊天记录</button>
+              <button type="button" data-evidence="支付记录">支付记录</button>
+              <button type="button" data-evidence="定位轨迹">定位轨迹</button>
+              <button type="button" data-evidence="医疗票据">医疗票据</button>
+              <button type="button" data-evidence="事故报备">事故报备</button>
+              <button class="primary" id="buildEvidence" type="button">生成证据包</button>
+            </section>
+            <section class="evidence-package">
+              <div class="evidence-meta">
+                <article><span>证据完整度</span><b id="packageScore">86%</b></article>
+                <article><span>材料数量</span><b id="packageCount">6类23项</b></article>
+                <article><span>可读摘要</span><b>已生成</b></article>
+              </div>
+              <div class="timeline-list" id="evidenceTimeline"></div>
+              <button class="secondary" id="downloadPackage" type="button">下载证据包 JSON</button>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-govern">
+          <div class="page-head"><span class="page-kicker">Government Twin</span><h2>政府治理数字孪生大屏</h2></div>
+          <div class="govern-frame"><iframe title="政府治理数字孪生大屏" src="./gov-digital-twin-platform.html"></iframe></div>
+        </section>
+
+        <section class="page" id="page-policy">
+          <div class="page-head"><span class="page-kicker">治理建议 Agent</span><h2>数据驱动法规与治理建议</h2></div>
+          <div class="policy-grid">
+            <section class="signal-chain">
+              <h3>数据证据链</h3>
+              <article><b>01</b><span>劳动关系认定争议占38%</span></article>
+              <article><b>02</b><span>事故报备材料48小时后缺失率上升31%</span></article>
+              <article><b>03</b><span>社保缺口咨询集中于3类平台协议</span></article>
+              <article><b>04</b><span>扣款/封号争议与规则变更日志相关</span></article>
+            </section>
+            <section class="recommendations">
+              <article class="red"><b>平台协议合规专项审查</b><p>建立协议备案与高风险条款红线审查清单。</p><em>依据：高风险条款触发 437 次</em></article>
+              <article class="amber"><b>职业伤害保障快速认定通道</b><p>对配送途中事故建立48小时证据固化入口。</p><em>预计：证据完整度提升 30%+</em></article>
+              <article class="cyan"><b>新业态社保缺口分层补贴试点</b><p>按平台类型、收入区间、从业时长形成分担建议。</p><em>目标：重点区域覆盖 10万人</em></article>
+              <article class="green"><b>平台算法管理透明度要求</b><p>保留派单、考核、封禁、扣款规则变更日志。</p><em>效果：事实核验周期下降 40%</em></article>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="./usable-platform.js?v=3"></script>
+  </body>
+</html>
